@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CustomAdapter (private val dataSet: Array<String>) :
+class CustomAdapter (private val dataSet: MutableList<String>) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
         /**
@@ -37,7 +37,8 @@ class CustomAdapter (private val dataSet: Array<String>) :
 
             // Get element from your dataset at this position and replace the
             // contents of the view with that element
-            viewHolder.textView.text = dataSet[position]
+            //viewHolder.textView.text = dataSet.[position]
+            viewHolder.textView.text = dataSet?.get(position)
         }
 
         // Return the size of your dataset (invoked by the layout manager)
